@@ -1,29 +1,16 @@
 const btn1 = document.querySelector('#btn-add');
 const btn2 = document.querySelector('#btn-submit');
 
-let myLibrary = [];
+const form = document.getElementById("contact-form");
 
-function Book() {
-  // the constructor...
-}
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
 
-function addBookToLibrary() {
-  // do stuff here
-}
+    const myFormData = new FormData(e.target);
 
-function openForm() {
-    document.getElementById("myForm").style.display = "block";
-}
-  
-function closeForm() {
-    document.getElementById("myForm").style.display = "none";
-}
+    const formDataObj = Object.fromEntries(myFormData.entries());
 
-btn1.addEventListener('click', () => {
-      openForm()
+    formDataObj.status = myFormData.getAll("status");
+    console.log(formDataObj);
+
 });
-
-btn2.addEventListener('click', () => {
-    closeForm()
-});
-  
