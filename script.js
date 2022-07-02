@@ -1,3 +1,6 @@
+const btn1 = document.querySelector('#btn-add');
+const btn2 = document.querySelector('#btn-submit');
+
 let myLibrary = [];
 
 function Book() {
@@ -10,8 +13,17 @@ function addBookToLibrary() {
 
 function openForm() {
     document.getElementById("myForm").style.display = "block";
-  }
+}
   
-  function closeForm() {
+function closeForm() {
     document.getElementById("myForm").style.display = "none";
-  }
+}
+
+btn1.addEventListener('click', () => {
+      openForm()
+});
+
+btn2.addEventListener('click', () => {
+    closeForm()
+});
+  
