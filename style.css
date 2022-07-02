@@ -56,7 +56,7 @@
     outline: none;
 }
 
-.form-container .btn-submit {
+.form-container #btn-submit {
     background-color: #1992d4;
     color: white;
     padding: 16px 20px;
