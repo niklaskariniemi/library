@@ -14,3 +14,19 @@ form.addEventListener("submit", (e) => {
     console.log(formDataObj);
 
 });
+
+function openForm() {
+    form.style.display = "block";
+}
+  
+function closeForm() {
+    form.style.display = "none";
+}
+
+btn1.addEventListener('click', () => {
+      openForm()
+});
+
+btn2.addEventListener('click', () => {
+    closeForm()
+});
