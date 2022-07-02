@@ -18,21 +18,36 @@
         </div>
     </section>
 
-    <section class = "main">
-        <div class="form-popup" id="myForm">
-            <form action= "" class="form-container">
-              <h1>Add Book</h1>
-          
-              <input type="text" placeholder="Title" name="title" >
-              <input type="text" placeholder="Book" name="book" >
-              <input type="number" placeholder="Pages" name="Page" >
-              <input type="checkbox" placeholder="Read" name="read-status" >
-              <label for="read-status"> Read </label>
-          
-              <button type="button" id = "btn-submit"> Add </button>
+    <section class="contact-form">
+        <div class="container">
+            <h1>Add Book</h1>
+            <form id="contact-form">   
+                <div class="form-control">
+                    <label for="title">Book Title</label>
+                    <input id="title" name="title" type="text" />
+                </div>
+    
+                <div class="form-control">
+                    <label for="author">Author</label>
+                    <input id="author" name="author" type="text" />
+                </div>
+    
+                <div class="form-control">
+                    <label for="page">Pages</label>
+                    <input id="page" name="page" type = "number"></input>
+                </div>
+    
+                <div class="form-control-2">
+                    <p class="group-label">Read Status</p>
+                    <input type="checkbox" name="status" value="Read" />Read
+                    <input type="checkbox" name="status" value="Not Read" />Not Read
+                </div>
+                <button class="btn" type="submit">Add</button>
             </form>
-          </div>
-        <div class = "book-list">
+        </div>
+        <div class="output">
+            <h2>Form Data Output</h2>
+            <pre class="output-pre"></pre>
         </div>
     </section>
     <script src = "script.js"></script>
