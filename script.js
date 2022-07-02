@@ -1,6 +1,7 @@
 // intialize variables
 const btn1 = document.querySelector('#btn-add');
 const form = document.getElementById("container");
+const library = document.getElementsByClassName("library");
 
 // open form
 function openForm() {
@@ -10,6 +11,11 @@ function openForm() {
 // close form
 function closeForm() {
     form.style.display = "none";
+}
+
+// display book data
+function displayBook() {
+    
 }
 
 // event listener for submitting, converting form data, and closing form
