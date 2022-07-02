@@ -1,7 +1,7 @@
 const btn1 = document.querySelector('#btn-add');
 const btn2 = document.querySelector('#btn-submit');
 
-const form = document.getElementById("contact-form");
+const form = document.getElementById("container");
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
