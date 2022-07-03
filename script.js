@@ -1,7 +1,7 @@
 // intialize variables
 const btn1 = document.querySelector('#btn-add');
 const form = document.getElementById("container");
-const library = document.getElementsByClassName("library");
+const bookList = document.getElementById("book-list");
 
 // open form
 function openForm() {
@@ -14,8 +14,18 @@ function closeForm() {
 }
 
 // display book data
-function displayBook() {
+function displayBook( formDataObj ) { 
     
+    // create new div
+    let div = document.createElement('div');
+    let txt = "";
+    for (let data in formDataObj) {
+    txt += formDataObj[data] + " ";
+    };
+    div.innerHTML = txt;
+    bookList.appendChild(div);
+    // add styling for grid placement and use index variable
+    // add div to main section
 }
 
 // event listener for submitting, converting form data, and closing form
@@ -29,6 +39,7 @@ form.addEventListener("submit", (e) => {
     formDataObj.status = myFormData.getAll("status");
     console.log(formDataObj);
 
+    displayBook( formDataObj );
     closeForm()
 
 });
