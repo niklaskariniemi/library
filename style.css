@@ -96,7 +96,8 @@
 }
 
 /* Main Section */
-.main {
+
+#book-list {
     display: grid;
     grid-template-columns: repeat(5, 1f);
     grid-template-rows: repeat(5, 1f);
