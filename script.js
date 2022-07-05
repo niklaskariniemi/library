@@ -20,19 +20,25 @@ function displayBook( formDataObj, columnPlacement, rowPlacement ) {
 
     // create new div and button
     let div = document.createElement('div');
+    let p1 = document.createElement('p');
+    let p2 = document.createElement('p');
+    let p3 = document.createElement('p');
     let btnremove = document.createElement('button');
     let btnstatus = document.createElement('button');
-    let txt = "";
-    for (let data in formDataObj) {
-        txt += formDataObj[data] + "\n";
-    };
-    div.innerHTML = txt;
+    p1.innerHTML = formDataObj.title;
+    p2.innerHTML = formDataObj.author;
+    p3.innerHTML = formDataObj.page;
+    //for (let data in formDataObj) {
+    //    txt += formDataObj[data] + '\n';
+    //};
+    //div.innerHTML = title + '\n' + author + page;
     // add styling for grid placement and use index variable
     btnremove.textContent = "Remove";
     btnremove.style.backgroundColor = "#1992d4";
     btnremove.style.padding = "10px";
     btnremove.style.border = "0px";
     btnremove.style.borderRadius = "7px";
+    btnremove.style.marginTop = "10px";
     btnremove.style.color = "white";
     btnremove.addEventListener('click', () => {
         div.style.display = "none";
@@ -75,6 +81,9 @@ function displayBook( formDataObj, columnPlacement, rowPlacement ) {
     div.style.gridColumn = columnPlacement;
     div.style.gridRow = rowPlacement;
     // add div and button to main section
+    div.appendChild(p1);
+    div.appendChild(p2);
+    div.appendChild(p3);
     div.appendChild(btnremove);
     div.appendChild(btnstatus);
     bookList.appendChild(div);
