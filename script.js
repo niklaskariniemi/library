@@ -18,17 +18,65 @@ function closeForm() {
 // display book data
 function displayBook( formDataObj, columnPlacement, rowPlacement ) { 
 
-    // create new div
+    // create new div and button
     let div = document.createElement('div');
+    let btnremove = document.createElement('button');
+    let btnstatus = document.createElement('button');
     let txt = "";
     for (let data in formDataObj) {
-    txt += formDataObj[data] + " ";
+        txt += formDataObj[data] + "\n";
     };
     div.innerHTML = txt;
     // add styling for grid placement and use index variable
+    btnremove.textContent = "Remove";
+    btnremove.style.backgroundColor = "#1992d4";
+    btnremove.style.padding = "10px";
+    btnremove.style.border = "0px";
+    btnremove.style.borderRadius = "7px";
+    btnremove.style.color = "white";
+    btnremove.addEventListener('click', () => {
+        div.style.display = "none";
+    });
+    btnstatus.textContent = "Read";
+    btnstatus.style.padding = "10px";
+    btnstatus.style.border = "0px";
+    btnstatus.style.borderRadius = "7px";
+    btnstatus.style.margin = "5px";
+    btnstatus.style.color = "white";
+
+    if ( formDataObj.status == "Read" ) {
+        btnstatus.style.backgroundColor = "green";
+    }
+    else {
+        btnstatus.style.backgroundColor = "red";
+        btnstatus.textContent = "Not Read";
+    }
+
+    btnstatus.addEventListener('click', () => {
+        if ( formDataObj.status == "Read" ) {
+            btnstatus.style.backgroundColor = "red";
+            btnstatus.textContent = "Not Read";
+        }
+        else {
+            btnstatus.style.backgroundColor = "green";
+            btnstatus.textContent = "Read";
+        }
+    });
+    div.style.backgroundColor = "white";
+    div.style.width = "250px";
+    div.style.height = "300px";
+    div.style.boxShadow = "0px 0px 14px -2px rgba(0,0,0,0.75)";
+    div.style.margin = "20px";
+    div.style.borderRadius = "14px";
+    div.style.display = "flex";
+    div.style.flexDirection = "column";
+    div.style.alignItems = "center";
+    div.style.justifyContent = "center";
     div.style.gridColumn = columnPlacement;
     div.style.gridRow = rowPlacement;
-    // add div to main section
+    // add div and button to main section
+    div.appendChild(btnremove);
+    div.appendChild(btnstatus);
     bookList.appendChild(div);
 }
 
@@ -44,7 +92,7 @@ form.addEventListener("submit", (e) => {
     console.log(formDataObj);
 
     closeForm()
-    if ( columnPlacement == 5) {
+    if ( columnPlacement == 4) {
         columnPlacement = 0;
         rowPlacement++;
     }
