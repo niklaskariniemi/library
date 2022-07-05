@@ -29,7 +29,11 @@ function displayBook( formDataObj, columnPlacement, rowPlacement ) {
     p1.innerHTML = formDataObj.title;
     p2.innerHTML = formDataObj.author;
     p3.innerHTML = formDataObj.page;
-    // add styling for grid placement and use index variable
+    // add styling for elements
+    p1.style.marginTop = "5px";
+    p2.style.marginTop = "5px";
+    p3.style.marginTop = "5px";
+
     btnremove.textContent = "Remove";
     btnremove.style.backgroundColor = "#1992d4";
     btnremove.style.padding = "10px";
@@ -40,6 +44,7 @@ function displayBook( formDataObj, columnPlacement, rowPlacement ) {
     btnremove.addEventListener('click', () => {
         div.style.display = "none";
     });
+
     btnstatus.textContent = "Read";
     btnstatus.style.padding = "10px";
     btnstatus.style.border = "0px";
@@ -65,6 +70,7 @@ function displayBook( formDataObj, columnPlacement, rowPlacement ) {
             btnstatus.textContent = "Read";
         }
     });
+
     div.style.backgroundColor = "white";
     div.style.width = "250px";
     div.style.height = "300px";
@@ -77,7 +83,8 @@ function displayBook( formDataObj, columnPlacement, rowPlacement ) {
     div.style.justifyContent = "center";
     div.style.gridColumn = columnPlacement;
     div.style.gridRow = rowPlacement;
-    // add div and button to main section
+    
+    // add div, p, and button to main section
     div.appendChild(p1);
     div.appendChild(p2);
     div.appendChild(p3);
