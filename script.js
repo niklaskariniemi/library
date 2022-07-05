@@ -25,13 +25,10 @@ function displayBook( formDataObj, columnPlacement, rowPlacement ) {
     let p3 = document.createElement('p');
     let btnremove = document.createElement('button');
     let btnstatus = document.createElement('button');
+    // add text to p elements
     p1.innerHTML = formDataObj.title;
     p2.innerHTML = formDataObj.author;
     p3.innerHTML = formDataObj.page;
-    //for (let data in formDataObj) {
-    //    txt += formDataObj[data] + '\n';
-    //};
-    //div.innerHTML = title + '\n' + author + page;
     // add styling for grid placement and use index variable
     btnremove.textContent = "Remove";
     btnremove.style.backgroundColor = "#1992d4";
