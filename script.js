@@ -2,6 +2,8 @@
 const btn1 = document.querySelector('#btn-add');
 const form = document.getElementById("container");
 const bookList = document.getElementById("book-list");
+let columnPlacement = 0;
+let rowPlacement = 1;
 
 // open form
 function openForm() {
@@ -14,8 +16,8 @@ function closeForm() {
 }
 
 // display book data
-function displayBook( formDataObj ) { 
-    
+function displayBook( formDataObj, columnPlacement, rowPlacement ) { 
+
     // create new div
     let div = document.createElement('div');
     let txt = "";
@@ -23,9 +25,11 @@ function displayBook( formDataObj ) {
     txt += formDataObj[data] + " ";
     };
     div.innerHTML = txt;
-    bookList.appendChild(div);
     // add styling for grid placement and use index variable
+    div.style.gridColumn = columnPlacement;
+    div.style.gridRow = rowPlacement;
     // add div to main section
+    bookList.appendChild(div);
 }
 
 // event listener for submitting, converting form data, and closing form
@@ -39,8 +43,13 @@ form.addEventListener("submit", (e) => {
     formDataObj.status = myFormData.getAll("status");
     console.log(formDataObj);
 
-    displayBook( formDataObj );
     closeForm()
+    if ( columnPlacement == 5) {
+        columnPlacement = 0;
+        rowPlacement++;
+    }
+    columnPlacement++;
+    displayBook( formDataObj, columnPlacement, rowPlacement );
 
 });
 
